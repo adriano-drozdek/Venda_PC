@@ -45,4 +45,14 @@ public class Item {
 		return preco * quantidade;
 	}
 
+	@Override
+	public String toString() {
+		return getProduto().getNome() 
+				+ ", $" 
+				+ String.format("%.2f", preco)
+				+ ", Quantidade: " 
+				+ quantidade
+				+ ", Subtotal: $"
+				+ String.format("%.2f", subTotal());
+	}
 }
