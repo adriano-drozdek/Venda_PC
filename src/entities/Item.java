@@ -5,13 +5,16 @@ public class Item {
 	private Integer quantidade;
 	private Double preco;
 
+	private Produto produto;
+
 	public Item() {
 
 	}
 
-	public Item(Integer quantidade, Double preco) {
+	public Item(Integer quantidade, Double preco, Produto produto) {
 		this.quantidade = quantidade;
 		this.preco = preco;
+		this.produto = produto;
 	}
 
 	public Integer getQuantidade() {
@@ -28,6 +31,14 @@ public class Item {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
 }
