@@ -41,4 +41,8 @@ public class Item {
 		this.produto = produto;
 	}
 
+	public double subTotal() {
+		return preco * quantidade;
+	}
+
 }
