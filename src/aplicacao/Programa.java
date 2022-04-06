@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Cliente;
+import entities.enuns.Status;
 
 public class Programa {
 
@@ -26,6 +27,10 @@ public class Programa {
 		Date dataNasc = sdf.parse(sc.next());
 
 		Cliente cliente = new Cliente(nome, email, dataNasc);
+		
+		System.out.println("Entre com os dados do pedido:");
+		System.out.print("Ststus: ");
+		Status status = Status.valueOf(sc.next());
 		sc.close();
 
 	}
