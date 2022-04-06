@@ -1,6 +1,8 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import entities.enuns.Status;
 
@@ -10,6 +12,8 @@ public class Pedido {
 	private Status status;
 
 	private Cliente cliente;
+
+	private List<Item> itens = new ArrayList<Item>();
 
 	public Pedido() {
 
@@ -43,6 +47,14 @@ public class Pedido {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public void addItem(Item item) {
+		itens.add(item);
+	}
+
+	public void removeItem(Item item) {
+		itens.remove(item);
 	}
 
 }
