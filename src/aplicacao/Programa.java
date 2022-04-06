@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Cliente;
+import entities.Item;
 import entities.Produto;
 import entities.enuns.Status;
 
@@ -46,6 +47,8 @@ public class Programa {
 			int quantidade = sc.nextInt();
 
 			Produto produto = new Produto(nomeProduto, valorProduto);
+
+			Item it = new Item(quantidade, valorProduto, produto);
 		}
 
 		sc.close();
