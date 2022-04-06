@@ -57,4 +57,12 @@ public class Pedido {
 		itens.remove(item);
 	}
 
+	public double total() {
+		double soma = 0;
+		for (Item it : itens) {
+			soma += it.subTotal();
+		}
+		return soma;
+	}
+
 }
