@@ -1,5 +1,6 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +8,8 @@ import java.util.List;
 import entities.enuns.Status;
 
 public class Pedido {
+
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 	private Date momento;
 	private Status status;
@@ -63,6 +66,24 @@ public class Pedido {
 			soma += it.subTotal();
 		}
 		return soma;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Momento do pedido: ");
+		sb.append(sdf.format(momento) + "\n");
+		sb.append("Status do pedido: ");
+		sb.append(status + "\n");
+		sb.append("Cliente: ");
+		sb.append(cliente + "\n");
+		sb.append("Itens do pedido:\n");
+		for (Item item : itens) {
+			sb.append(item + "\n");
+		}
+		sb.append("Preço total: $");
+		sb.append(String.format("%.2f", total()));
+		return sb.toString();
 	}
 
 }
