@@ -52,6 +52,8 @@ public class Programa {
 			Produto produto = new Produto(nomeProduto, valorProduto);
 
 			Item it = new Item(quantidade, valorProduto, produto);
+			
+			pedido.addItem(it);
 		}
 
 		sc.close();
