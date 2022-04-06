@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import entities.Cliente;
 import entities.Item;
+import entities.Pedido;
 import entities.Produto;
 import entities.enuns.Status;
 
@@ -33,6 +34,8 @@ public class Programa {
 		System.out.println("Entre com os dados do pedido:");
 		System.out.print("Ststus: ");
 		Status status = Status.valueOf(sc.next());
+
+		Pedido pedido = new Pedido(new Date(), status, cliente);
 
 		System.out.println("Quantos itens o pedido vai ter? ");
 		int N = sc.nextInt();
