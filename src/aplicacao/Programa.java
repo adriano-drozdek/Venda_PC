@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Cliente;
+import entities.Produto;
 import entities.enuns.Status;
 
 public class Programa {
@@ -27,10 +28,26 @@ public class Programa {
 		Date dataNasc = sdf.parse(sc.next());
 
 		Cliente cliente = new Cliente(nome, email, dataNasc);
-		
+
 		System.out.println("Entre com os dados do pedido:");
 		System.out.print("Ststus: ");
 		Status status = Status.valueOf(sc.next());
+
+		System.out.println("Quantos itens o pedido vai ter? ");
+		int N = sc.nextInt();
+		for (int i = 1; i <= N; i++) {
+			System.out.println("Entre #1" + i + " pedido: ");
+			System.out.print("Nome do produto: ");
+			sc.nextLine();
+			String nomeProduto = sc.nextLine();
+			System.out.print("Valor do produto: ");
+			double valorProduto = sc.nextDouble();
+			System.out.print("Quantidade: ");
+			int quantidade = sc.nextInt();
+
+			Produto produto = new Produto(nomeProduto, valorProduto);
+		}
+
 		sc.close();
 
 	}
