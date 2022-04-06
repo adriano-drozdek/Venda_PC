@@ -9,13 +9,16 @@ public class Pedido {
 	private Date momento;
 	private Status status;
 
+	private Cliente cliente;
+
 	public Pedido() {
 
 	}
 
-	public Pedido(Date momento, Status status) {
+	public Pedido(Date momento, Status status, Cliente cliente) {
 		this.momento = momento;
 		this.status = status;
+		this.cliente = cliente;
 	}
 
 	public Date getMomento() {
@@ -32,6 +35,14 @@ public class Pedido {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 }
