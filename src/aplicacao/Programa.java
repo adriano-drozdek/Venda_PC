@@ -14,20 +14,20 @@ import entities.enuns.Status;
 
 public class Programa {
 
-	public static void main(String[] args) throws ParseException {
-
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	public static void main(String[] args) throws ParseException  {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		System.out.println("Entre com os dados do cliente: ");
 		System.out.print("Nome: ");
 		String nome = sc.nextLine();
 		System.out.print("Email: ");
 		String email = sc.next();
-		System.out.println("Data de nascimento: ");
-		Date dataNasc = sdf.parse(sc.next());
+		System.out.print("Data de nascimento: ");
+		Date dataNasc = sdf.parse(sc.next()); 
 
 		Cliente cliente = new Cliente(nome, email, dataNasc);
 
@@ -37,10 +37,10 @@ public class Programa {
 
 		Pedido pedido = new Pedido(new Date(), status, cliente);
 
-		System.out.println("Quantos itens o pedido vai ter? ");
+		System.out.print("Quantos itens o pedido vai ter? ");
 		int N = sc.nextInt();
 		for (int i = 1; i <= N; i++) {
-			System.out.println("Entre #1" + i + " pedido: ");
+			System.out.println("Entre #" + i + " pedido: ");
 			System.out.print("Nome do produto: ");
 			sc.nextLine();
 			String nomeProduto = sc.nextLine();
@@ -52,9 +52,12 @@ public class Programa {
 			Produto produto = new Produto(nomeProduto, valorProduto);
 
 			Item it = new Item(quantidade, valorProduto, produto);
-			
+
 			pedido.addItem(it);
 		}
+
+		System.out.println();
+		System.out.println(pedido);
 
 		sc.close();
 
